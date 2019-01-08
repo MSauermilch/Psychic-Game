@@ -1,0 +1,23 @@
+
+#body {
+    height: 100%; 
+}
+
+#background {
+    background-image: url("../images/aleister_crowley.jpeg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#gamename {
+    margin-top: 10px;
+    padding-top: 20px;
+    font-size: 180%;
+    font-weight: bold;
+}
+
+#game {
+    padding: 20px;
+}
