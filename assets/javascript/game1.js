@@ -14,6 +14,13 @@
       var letterToCompare = compLetter();
       console.log(letterToCompare);
 
+      function reset() {
+        guesses = 8;
+        for (i=0; i<8; i++){
+            choices.pop();
+            };
+      }
+      
       document.onkeyup = function(event) {
         var userLetter = String.fromCharCode(event.keyCode).toLowerCase();
       
@@ -21,10 +28,7 @@
         if (userLetter === letterToCompare) {
           letterToCompare = compLetter();
           win++;
-          guesses = 8;
-          for (i=0; i<8; i++){
-              choices.pop();
-              };
+         reset();
         } else {
           guesses--;
           choices.push(userLetter);
@@ -41,10 +45,15 @@
         }
 
         var html = "<p><center>Guess My Letter!!!</center></p>" +
+          "<br></br>" +
           "<p><center>You have guessed correctly " + win + " times!</center></p>" +
+          "<br></br>" +
           "<p><center>You have guessed wrongly " + losses + "</center></p>" +
+          "<br></br>" +
           "<p><center>You have " + guesses + " guesses left to win!</center></p>" +
-          "<p><center>Previous choices: " + choices + "</center></p>";
+          "<br></br>" +
+          "<p><center>Previous choices: " + choices + "</center></p>" +
+          "<br></br>";
 
           document.querySelector('#game').innerHTML = html;
     }
